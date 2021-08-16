@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		283FDDF326C56ADE00A5316A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283FDDF226C56ADE00A5316A /* AppDelegate.swift */; };
-		283FDDF526C56ADE00A5316A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283FDDF426C56ADE00A5316A /* SceneDelegate.swift */; };
-		283FDDFA26C56ADE00A5316A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283FDDF826C56ADE00A5316A /* Main.storyboard */; };
-		283FDDFC26C56AE000A5316A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 283FDDFB26C56AE000A5316A /* Assets.xcassets */; };
-		283FDDFF26C56AE000A5316A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283FDDFD26C56AE000A5316A /* LaunchScreen.storyboard */; };
-		283FDE0726C56D3B00A5316A /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283FDE0626C56D3B00A5316A /* Emoji.swift */; };
-		283FDE0926C5ACE200A5316A /* EmojiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283FDE0826C5ACE200A5316A /* EmojiTableViewController.swift */; };
-		B5A5EF1826CA7C6100B13AD8 /* EmojiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5EF1726CA7C6100B13AD8 /* EmojiTableViewCell.swift */; };
+		B5A5EEFE26C99B4600B13AD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5EEFD26C99B4600B13AD8 /* AppDelegate.swift */; };
+		B5A5EF0026C99B4600B13AD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5EEFF26C99B4600B13AD8 /* SceneDelegate.swift */; };
+		B5A5EF0526C99B4600B13AD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A5EF0326C99B4600B13AD8 /* Main.storyboard */; };
+		B5A5EF0726C99B4800B13AD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5A5EF0626C99B4800B13AD8 /* Assets.xcassets */; };
+		B5A5EF0A26C99B4800B13AD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A5EF0826C99B4800B13AD8 /* LaunchScreen.storyboard */; };
+		B5A5EF1226C99D0C00B13AD8 /* FoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5EF1126C99D0C00B13AD8 /* FoodTableViewController.swift */; };
+		B5A5EF1426C99D5A00B13AD8 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5EF1326C99D5A00B13AD8 /* Meal.swift */; };
+		B5A5EF1626C99D5F00B13AD8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5EF1526C99D5F00B13AD8 /* Food.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		283FDDEF26C56ADE00A5316A /* EmojiDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		283FDDF226C56ADE00A5316A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		283FDDF426C56ADE00A5316A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		283FDDF926C56ADE00A5316A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		283FDDFB26C56AE000A5316A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		283FDDFE26C56AE000A5316A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		283FDE0026C56AE000A5316A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		283FDE0626C56D3B00A5316A /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
-		283FDE0826C5ACE200A5316A /* EmojiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTableViewController.swift; sourceTree = "<group>"; };
-		B5A5EF1726CA7C6100B13AD8 /* EmojiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTableViewCell.swift; sourceTree = "<group>"; };
+		B5A5EEFA26C99B4600B13AD8 /* Meal Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meal Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5A5EEFD26C99B4600B13AD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5A5EEFF26C99B4600B13AD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B5A5EF0426C99B4600B13AD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5A5EF0626C99B4800B13AD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5A5EF0926C99B4800B13AD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5A5EF0B26C99B4800B13AD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5A5EF1126C99D0C00B13AD8 /* FoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewController.swift; sourceTree = "<group>"; };
+		B5A5EF1326C99D5A00B13AD8 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		B5A5EF1526C99D5F00B13AD8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		283FDDEC26C56ADE00A5316A /* Frameworks */ = {
+		B5A5EEF726C99B4600B13AD8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,73 +41,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		283FDDE626C56ADE00A5316A = {
+		B5A5EEF126C99B4600B13AD8 = {
 			isa = PBXGroup;
 			children = (
-				283FDDF126C56ADE00A5316A /* EmojiDictionary */,
-				283FDDF026C56ADE00A5316A /* Products */,
+				B5A5EEFC26C99B4600B13AD8 /* Meal Tracker */,
+				B5A5EEFB26C99B4600B13AD8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		283FDDF026C56ADE00A5316A /* Products */ = {
+		B5A5EEFB26C99B4600B13AD8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				283FDDEF26C56ADE00A5316A /* EmojiDictionary.app */,
+				B5A5EEFA26C99B4600B13AD8 /* Meal Tracker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		283FDDF126C56ADE00A5316A /* EmojiDictionary */ = {
+		B5A5EEFC26C99B4600B13AD8 /* Meal Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				283FDDF226C56ADE00A5316A /* AppDelegate.swift */,
-				283FDDF426C56ADE00A5316A /* SceneDelegate.swift */,
-				283FDDF826C56ADE00A5316A /* Main.storyboard */,
-				B5A5EF1726CA7C6100B13AD8 /* EmojiTableViewCell.swift */,
-				283FDE0826C5ACE200A5316A /* EmojiTableViewController.swift */,
-				283FDE0626C56D3B00A5316A /* Emoji.swift */,
-				283FDDFB26C56AE000A5316A /* Assets.xcassets */,
-				283FDDFD26C56AE000A5316A /* LaunchScreen.storyboard */,
-				283FDE0026C56AE000A5316A /* Info.plist */,
+				B5A5EF1526C99D5F00B13AD8 /* Food.swift */,
+				B5A5EF1326C99D5A00B13AD8 /* Meal.swift */,
+				B5A5EF1126C99D0C00B13AD8 /* FoodTableViewController.swift */,
+				B5A5EEFD26C99B4600B13AD8 /* AppDelegate.swift */,
+				B5A5EEFF26C99B4600B13AD8 /* SceneDelegate.swift */,
+				B5A5EF0326C99B4600B13AD8 /* Main.storyboard */,
+				B5A5EF0626C99B4800B13AD8 /* Assets.xcassets */,
+				B5A5EF0826C99B4800B13AD8 /* LaunchScreen.storyboard */,
+				B5A5EF0B26C99B4800B13AD8 /* Info.plist */,
 			);
-			path = EmojiDictionary;
+			path = "Meal Tracker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		283FDDEE26C56ADE00A5316A /* EmojiDictionary */ = {
+		B5A5EEF926C99B4600B13AD8 /* Meal Tracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 283FDE0326C56AE000A5316A /* Build configuration list for PBXNativeTarget "EmojiDictionary" */;
+			buildConfigurationList = B5A5EF0E26C99B4800B13AD8 /* Build configuration list for PBXNativeTarget "Meal Tracker" */;
 			buildPhases = (
-				283FDDEB26C56ADE00A5316A /* Sources */,
-				283FDDEC26C56ADE00A5316A /* Frameworks */,
-				283FDDED26C56ADE00A5316A /* Resources */,
+				B5A5EEF626C99B4600B13AD8 /* Sources */,
+				B5A5EEF726C99B4600B13AD8 /* Frameworks */,
+				B5A5EEF826C99B4600B13AD8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = EmojiDictionary;
-			productName = EmojiDictionary;
-			productReference = 283FDDEF26C56ADE00A5316A /* EmojiDictionary.app */;
+			name = "Meal Tracker";
+			productName = "Meal Tracker";
+			productReference = B5A5EEFA26C99B4600B13AD8 /* Meal Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		283FDDE726C56ADE00A5316A /* Project object */ = {
+		B5A5EEF226C99B4600B13AD8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					283FDDEE26C56ADE00A5316A = {
+					B5A5EEF926C99B4600B13AD8 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
 				};
 			};
-			buildConfigurationList = 283FDDEA26C56ADE00A5316A /* Build configuration list for PBXProject "EmojiDictionary" */;
+			buildConfigurationList = B5A5EEF526C99B4600B13AD8 /* Build configuration list for PBXProject "Meal Tracker" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,57 +115,57 @@
 				en,
 				Base,
 			);
-			mainGroup = 283FDDE626C56ADE00A5316A;
-			productRefGroup = 283FDDF026C56ADE00A5316A /* Products */;
+			mainGroup = B5A5EEF126C99B4600B13AD8;
+			productRefGroup = B5A5EEFB26C99B4600B13AD8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				283FDDEE26C56ADE00A5316A /* EmojiDictionary */,
+				B5A5EEF926C99B4600B13AD8 /* Meal Tracker */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		283FDDED26C56ADE00A5316A /* Resources */ = {
+		B5A5EEF826C99B4600B13AD8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				283FDDFF26C56AE000A5316A /* LaunchScreen.storyboard in Resources */,
-				283FDDFC26C56AE000A5316A /* Assets.xcassets in Resources */,
-				283FDDFA26C56ADE00A5316A /* Main.storyboard in Resources */,
+				B5A5EF0A26C99B4800B13AD8 /* LaunchScreen.storyboard in Resources */,
+				B5A5EF0726C99B4800B13AD8 /* Assets.xcassets in Resources */,
+				B5A5EF0526C99B4600B13AD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		283FDDEB26C56ADE00A5316A /* Sources */ = {
+		B5A5EEF626C99B4600B13AD8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				283FDE0926C5ACE200A5316A /* EmojiTableViewController.swift in Sources */,
-				283FDE0726C56D3B00A5316A /* Emoji.swift in Sources */,
-				B5A5EF1826CA7C6100B13AD8 /* EmojiTableViewCell.swift in Sources */,
-				283FDDF326C56ADE00A5316A /* AppDelegate.swift in Sources */,
-				283FDDF526C56ADE00A5316A /* SceneDelegate.swift in Sources */,
+				B5A5EF1426C99D5A00B13AD8 /* Meal.swift in Sources */,
+				B5A5EEFE26C99B4600B13AD8 /* AppDelegate.swift in Sources */,
+				B5A5EF1626C99D5F00B13AD8 /* Food.swift in Sources */,
+				B5A5EF1226C99D0C00B13AD8 /* FoodTableViewController.swift in Sources */,
+				B5A5EF0026C99B4600B13AD8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		283FDDF826C56ADE00A5316A /* Main.storyboard */ = {
+		B5A5EF0326C99B4600B13AD8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				283FDDF926C56ADE00A5316A /* Base */,
+				B5A5EF0426C99B4600B13AD8 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		283FDDFD26C56AE000A5316A /* LaunchScreen.storyboard */ = {
+		B5A5EF0826C99B4800B13AD8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				283FDDFE26C56AE000A5316A /* Base */,
+				B5A5EF0926C99B4800B13AD8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		283FDE0126C56AE000A5316A /* Debug */ = {
+		B5A5EF0C26C99B4800B13AD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -234,7 +234,7 @@
 			};
 			name = Debug;
 		};
-		283FDE0226C56AE000A5316A /* Release */ = {
+		B5A5EF0D26C99B4800B13AD8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -289,38 +289,38 @@
 			};
 			name = Release;
 		};
-		283FDE0426C56AE000A5316A /* Debug */ = {
+		B5A5EF0F26C99B4800B13AD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U6Q9G3RA4Y;
-				INFOPLIST_FILE = EmojiDictionary/Info.plist;
+				INFOPLIST_FILE = "Meal Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wickedrun.EmojiDictionary;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wickedrun.Meal-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		283FDE0526C56AE000A5316A /* Release */ = {
+		B5A5EF1026C99B4800B13AD8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U6Q9G3RA4Y;
-				INFOPLIST_FILE = EmojiDictionary/Info.plist;
+				INFOPLIST_FILE = "Meal Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wickedrun.EmojiDictionary;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wickedrun.Meal-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -330,25 +330,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		283FDDEA26C56ADE00A5316A /* Build configuration list for PBXProject "EmojiDictionary" */ = {
+		B5A5EEF526C99B4600B13AD8 /* Build configuration list for PBXProject "Meal Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				283FDE0126C56AE000A5316A /* Debug */,
-				283FDE0226C56AE000A5316A /* Release */,
+				B5A5EF0C26C99B4800B13AD8 /* Debug */,
+				B5A5EF0D26C99B4800B13AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		283FDE0326C56AE000A5316A /* Build configuration list for PBXNativeTarget "EmojiDictionary" */ = {
+		B5A5EF0E26C99B4800B13AD8 /* Build configuration list for PBXNativeTarget "Meal Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				283FDE0426C56AE000A5316A /* Debug */,
-				283FDE0526C56AE000A5316A /* Release */,
+				B5A5EF0F26C99B4800B13AD8 /* Debug */,
+				B5A5EF1026C99B4800B13AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 283FDDE726C56ADE00A5316A /* Project object */;
+	rootObject = B5A5EEF226C99B4600B13AD8 /* Project object */;
 }
