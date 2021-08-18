@@ -15,6 +15,7 @@
 		283FDE0726C56D3B00A5316A /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283FDE0626C56D3B00A5316A /* Emoji.swift */; };
 		283FDE0926C5ACE200A5316A /* EmojiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283FDE0826C5ACE200A5316A /* EmojiTableViewController.swift */; };
 		B5A5EF1826CA7C6100B13AD8 /* EmojiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5EF1726CA7C6100B13AD8 /* EmojiTableViewCell.swift */; };
+		B5A5EF1A26CAAAC900B13AD8 /* AddEditEmojiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5EF1926CAAAC900B13AD8 /* AddEditEmojiTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		283FDE0626C56D3B00A5316A /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		283FDE0826C5ACE200A5316A /* EmojiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTableViewController.swift; sourceTree = "<group>"; };
 		B5A5EF1726CA7C6100B13AD8 /* EmojiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTableViewCell.swift; sourceTree = "<group>"; };
+		B5A5EF1926CAAAC900B13AD8 /* AddEditEmojiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditEmojiTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				283FDDF226C56ADE00A5316A /* AppDelegate.swift */,
 				283FDDF426C56ADE00A5316A /* SceneDelegate.swift */,
 				283FDDF826C56ADE00A5316A /* Main.storyboard */,
+				B5A5EF1926CAAAC900B13AD8 /* AddEditEmojiTableViewController.swift */,
 				B5A5EF1726CA7C6100B13AD8 /* EmojiTableViewCell.swift */,
 				283FDE0826C5ACE200A5316A /* EmojiTableViewController.swift */,
 				283FDE0626C56D3B00A5316A /* Emoji.swift */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A5EF1A26CAAAC900B13AD8 /* AddEditEmojiTableViewController.swift in Sources */,
 				283FDE0926C5ACE200A5316A /* EmojiTableViewController.swift in Sources */,
 				283FDE0726C56D3B00A5316A /* Emoji.swift in Sources */,
 				B5A5EF1826CA7C6100B13AD8 /* EmojiTableViewCell.swift in Sources */,

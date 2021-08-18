@@ -27,12 +27,9 @@ class EmojiTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // description이 길때 text가 잘리는것을 방지하기위해.
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 44.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +37,41 @@ class EmojiTableViewController: UITableViewController {
         tableView.reloadData() // view가 나타났을때 호출되는 이 메서드에서 reloadData()를 호출하여 강제로 data를 Refresh한다.
     }
 
+    @IBSegueAction func addEditEmoji(_ coder: NSCoder, sender: Any?) -> AddEditEmojiTableViewController? {
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+            // Editing Emoji
+            let emojiToEdit = emojis[indexPath.row]
+            return AddEditEmojiTableViewController(coder: coder, emoji: emojiToEdit)
+        } else {
+            // Adding Emoji
+            return AddEditEmojiTableViewController(coder: coder, emoji: nil)
+        }
+    }
+    
+    @IBAction func unwindToEmojiTableView(segue: UIStoryboardSegue) {
+        guard segue.identifier == "saveUnwind",
+              let sourceViewController = segue.source as? AddEditEmojiTableViewController,
+              let emoji = sourceViewController.emoji
+        else {
+            // 선택된 상태로 + 버튼을 누르고 이모지를 추가할 경우 밑에서 let selectedIndexPath에서 nil이 아니고 IndexPath를 받게 되어서 추가가 아니라 수정이 되기 때문에
+            // 가드문에서 선택을 해제 해주었음.
+            if let selected = tableView.indexPathForSelectedRow {
+                tableView.deselectRow(at: selected, animated: false)
+            }
+            return
+        }
+        
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            emojis[selectedIndexPath.row] = emoji
+            tableView.reloadRows(at: [selectedIndexPath], with: .none)
+        } else {
+            let newIndexPath = IndexPath(row: emojis.count, section: 0)
+            emojis.append(emoji)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // 섹션이 몇개인지.
@@ -52,31 +84,17 @@ class EmojiTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Configure the cell...
-        // 1. Fetch the correct cell type by dequeueing a cell.
-        // cell을 가져온다. 스크린에서 안보여지는 cell 인스턴스를 가져오는 느낌.
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EmojiCell", for: indexPath)
-        
-        // 2. Fetch the model object to be displayed.
-        // indexPath.row라는 인덱스값을 가지고 모델 오브젝트를 가져온다.
+        // Step 1: Dequeue cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EmojiCell", for: indexPath) as! EmojiTableViewCell // customCell로 캐스팅해준다.
+        // Step 2: Fetch model object to display
         let emoji = emojis[indexPath.row]
         
-        // 3. Configure the cell's properties with the model object's properties -- in other words, set view(labels, image views, etc.) based on the model object.
-        // cell의 프로퍼티를 모델 오브젝트 값들로 설정한다. 다시 말해서, 뷰를 set해준다.
-        cell.textLabel?.text = "\(emoji.symbol) - \(emoji.name)"
-        cell.detailTextLabel?.text = emoji.description
-    
+        // Step 3: Configure cell
+        cell.update(with: emoji)
         cell.showsReorderControl = true // reorder 하기위해서 필요함.
         
-        // 4. Return the fully configured cell.
-        // configure된 cell을 리턴해준다.
+        // Step 4: Return cell
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // This method is used to respond to user interaction with the cell's content area.
-        let emoji = emojis[indexPath.row]
-        print("\(emoji.symbol) \(indexPath)")
     }
 
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
@@ -88,25 +106,14 @@ class EmojiTableViewController: UITableViewController {
         tableView.setEditing(!tableViewEditingMode, animated: true)
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            emojis.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
-    */
 
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -116,26 +123,7 @@ class EmojiTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        // delete indicator 표시하지 않기위해 .none으로 설정.
-        return .none
+        return .delete
     }
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
