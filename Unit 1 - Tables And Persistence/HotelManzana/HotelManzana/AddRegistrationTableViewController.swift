@@ -8,21 +8,8 @@
 import UIKit
 
 class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeTableViewControllerDelegate {
-    var registration: Registration? {
-        // computed 프로퍼티로 get할 시점에 registration 계산한다.
-        guard let roomType = roomType else { return nil }
-        let firstName = firstNameTextField.text ?? ""
-        let lastName = lastNameTextField.text ?? ""
-        let email = emailTextField.text ?? ""
-        let checkInDate = checkInDatePicker.date
-        let checkOutDate = checkOutDatePicker.date
-        let numberOfAdults = Int(numberOfAdultsStepper.value)
-        let numberOfChildren = Int(numberOfChildrenStepper.value)
-        let hasWifi = wifiSwitch.isOn
-        
-        return Registration(firstName: firstName, lastName: lastName, emailAddress: email, checkInDate: checkInDate, checkOutDate: checkOutDate, numberOfAdults: numberOfAdults, numberOfChildren: numberOfChildren, wifi: hasWifi, roomType: roomType)
-    }
-    
+    var registration: Registration?
+ 
     @IBOutlet var checkInDateLabel: UILabel!
     @IBOutlet var checkInDatePicker: UIDatePicker!
     @IBOutlet var checkOutDateLabel: UILabel!
@@ -62,15 +49,48 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
     
     @IBOutlet var roomTypeLabel: UILabel!
     var roomType: RoomType?
+    @IBOutlet var doneBarbuttonItem: UIBarButtonItem!
+    
+    init?(coder: NSCoder, registration: Registration?, roomType: RoomType?) {
+        self.registration = registration
+        self.roomType = roomType
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let midnightToday = Calendar.current.startOfDay(for: Date())
-        checkInDatePicker.minimumDate = midnightToday
-        checkInDatePicker.date = midnightToday
+        if let registration = registration {
+            firstNameTextField.text = registration.firstName
+            lastNameTextField.text = registration.lastName
+            emailTextField.text = registration.emailAddress
+            checkInDatePicker.date = registration.checkInDate
+            checkOutDatePicker.date = registration.checkOutDate
+            numberOfAdultsStepper.value = Double(registration.numberOfAdults)
+            numberOfChildrenStepper.value = Double(registration.numberOfChildren)
+        } else {
+            let midnightToday = Calendar.current.startOfDay(for: Date())
+            checkInDatePicker.minimumDate = midnightToday
+            checkInDatePicker.date = midnightToday
+        }
         updateDateViews()
         updateNumberOfGuests()
         updateRoomType()
+        updateNumberOfNightsViews()
+        updateRoomTypeChargeViews()
+        updateWiFiChargeViews()
+        updateTotalChargeView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if self.roomType != nil {
+            doneBarbuttonItem.isEnabled = true
+        } else {
+            doneBarbuttonItem.isEnabled = false
+        }
     }
     
     // doneButtonTapped method 삭제.
@@ -87,6 +107,8 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
     
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         updateDateViews()
+        updateNumberOfNightsViews()
+        updateWiFiChargeViews()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -132,6 +154,8 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
     
     @IBAction func wifiSwitchChanged(_ sender: UISwitch) {
         // implemented later
+        updateWiFiChargeViews()
+        updateTotalChargeView()
     }
     
     func updateRoomType() {
@@ -145,6 +169,8 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
     func selectRoomTypeTableViewController(_ controller: SelectRoomTypeTableViewController, didSelect roomType: RoomType) {
         self.roomType = roomType
         updateRoomType()
+        updateRoomTypeChargeViews()
+        updateTotalChargeView()
     }
     
     @IBSegueAction func selectRoomType(_ coder: NSCoder) -> SelectRoomTypeTableViewController? {
@@ -152,5 +178,69 @@ class AddRegistrationTableViewController: UITableViewController, SelectRoomTypeT
         selectRoomTypeController?.delegate = self
         selectRoomTypeController?.roomType = roomType
         return selectRoomTypeController
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "doneUnwind" else { return }
+        guard let roomType = roomType else { return }
+        let firstName = firstNameTextField.text ?? ""
+        let lastName = lastNameTextField.text ?? ""
+        let email = emailTextField.text ?? ""
+        let checkInDate = checkInDatePicker.date
+        let checkOutDate = checkOutDatePicker.date
+        let numberOfAdults = Int(numberOfAdultsStepper.value)
+        let numberOfChildren = Int(numberOfChildrenStepper.value)
+        let hasWifi = wifiSwitch.isOn
+        
+        registration = Registration(firstName: firstName, lastName: lastName, emailAddress: email, checkInDate: checkInDate, checkOutDate: checkOutDate, numberOfAdults: numberOfAdults, numberOfChildren: numberOfChildren, wifi: hasWifi, roomType: roomType)
+    }
+    
+    // Challenge
+    @IBOutlet var numberOfNightsLabel: UILabel!
+    @IBOutlet var numberOfNightsDetailLabel: UILabel!
+    var distance: Int {
+        let distance = checkInDatePicker.date.distance(to: checkOutDatePicker.date) / 86400.0
+        return Int(distance)
+    }
+    
+    @IBOutlet var roomTypeChargeLabel: UILabel!
+    @IBOutlet var roomTypeChargeDetailLabel: UILabel!
+    var roomTypeCharge: Int {
+        guard let roomtype = roomType else { return 0}
+        return roomtype.price * distance
+    }
+    
+    @IBOutlet var wifiChargeLabel: UILabel!
+    @IBOutlet var wifiChargeDetailLabel: UILabel!
+    let wifiPrice = 10
+    
+    @IBOutlet var totalChargeLabel: UILabel!
+    
+    func updateNumberOfNightsViews() {
+        numberOfNightsLabel.text = "\(distance)"
+        numberOfNightsDetailLabel.text = "\(dateFormatter.string(from: checkInDatePicker.date)) - \(dateFormatter.string(from: checkOutDatePicker.date))"
+    }
+    
+    func updateRoomTypeChargeViews() {
+        guard let roomtype = roomType else {
+            roomTypeChargeLabel.text = "$ 0"
+            roomTypeChargeDetailLabel.text = "Not Set"
+            return
+        }
+        roomTypeChargeLabel.text = "$ \(roomTypeCharge)"
+        roomTypeChargeDetailLabel.text = "\(roomtype.name) @ $\(roomtype.price)/night"
+    }
+    
+    func updateWiFiChargeViews() {
+        wifiChargeLabel.text = wifiSwitch.isOn ? "$ \(wifiPrice * distance)" : "$ 0"
+        wifiChargeDetailLabel.text = wifiSwitch.isOn ? "yes" : "no"
+    }
+    
+    func updateTotalChargeView() {
+        guard roomType != nil else {
+            totalChargeLabel.text = "$ 0"
+            return
+        }
+        totalChargeLabel.text = wifiSwitch.isOn ? "$ \((wifiPrice * distance) + roomTypeCharge)" : "$ \(roomTypeCharge)"
     }
 }
