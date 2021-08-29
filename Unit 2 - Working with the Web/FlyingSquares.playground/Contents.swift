@@ -45,7 +45,38 @@ liveView.addSubview(square)
 //
 
 // 바운시 느낌.
-UIView.animate(withDuration: 1.3, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.9, options: [], animations: {
-    square.frame = CGRect(x: 150, y: 150, width: 200, height: 200)
-}, completion: nil)
+//UIView.animate(withDuration: 1.3, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.9, options: [], animations: {
+//    square.frame = CGRect(x: 150, y: 150, width: 200, height: 200)
+//}, completion: nil)
+
+// transform affine transform
+//UIView.animate(withDuration: 2.0) {
+//    square.backgroundColor = .orange
+//    let scaleTransform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+//    let rotateTransform = CGAffineTransform(rotationAngle: .pi)
+//    let translateTransform = CGAffineTransform(translationX: 200, y: 200)
+//
+//    let comboTransform = scaleTransform.concatenating(rotateTransform).concatenating(translateTransform)
+//    square.transform = comboTransform
+//}
+
+// undo 하고 싶으면 identity 프로퍼티이용.
+//UIView.animate(withDuration: 2.0, animations:  {
+//    square.backgroundColor = .orange
+//    print(square.transform.a, square.transform.b, square.transform.c, square.transform.d, square.transform.tx, square.transform.ty)
+//    let scaleTransform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+//    let rotateTransform = CGAffineTransform(rotationAngle: .pi)
+//    let translateTransform = CGAffineTransform(translationX: 200, y: 200)
+//
+//    let comboTransform = scaleTransform.concatenating(rotateTransform).concatenating(translateTransform)
+//
+//    square.transform = comboTransform
+//}) { (_) in
+//    UIView.animate(withDuration: 2.0, animations: {
+//        square.transform = CGAffineTransform.identity
+//    })
+//}
+// 책에서는 중심을 축으로 돌았다.
+// 나는왜 마지막점을 축으로 도는지 모르겠다.
+
 
