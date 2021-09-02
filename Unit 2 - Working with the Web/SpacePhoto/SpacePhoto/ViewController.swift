@@ -26,20 +26,36 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let photoInfo) :
-                    // UI 변경은 main queue에서 작업해야함. 그래서 위에 DispatchQueue.main으로 감싸줬음.
-                    self.title = photoInfo.title
-                    self.descriptionLabel.text = photoInfo.description
-                    self.copyrightLabel.text = photoInfo.copyright
+                    self.updateUI(with: photoInfo)
                 case .failure(let error) :
-                    self.title = "Error Fetching Photo"
-                    self.imageView.image = UIImage(systemName: "exclamationmark.octagon")
-                    self.descriptionLabel.text = error.localizedDescription
-                    self.copyrightLabel.text = ""
+                    self.updateUI(with: error)
                 }
             }
         }
     }
-
+    
+    func updateUI(with photoInfo: PhotoInfo) {
+        photoInfoController.fetchImage(from: photoInfo.url) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let image):
+                    self.title = photoInfo.title
+                    self.imageView.image = image
+                    self.descriptionLabel.text = photoInfo.description
+                    self.copyrightLabel.text = photoInfo.copyright
+                case .failure(let error):
+                    self.updateUI(with: error)
+                }
+            }
+        }
+    }
+    
+    func updateUI(with error: Error) {
+        title = "Error Fetching Photo"
+        imageView.image = UIImage(systemName: "exclamationmark.octagon")
+        descriptionLabel.text = error.localizedDescription
+        copyrightLabel.text = ""
+    }
 
 }
 
