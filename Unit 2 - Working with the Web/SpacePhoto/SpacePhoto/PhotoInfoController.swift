@@ -12,7 +12,8 @@ class PhotoInfoController {
     func fetchPhotoInfo(completion: @escaping (Result<PhotoInfo, Error>) -> Void) {
         var urlComponents = URLComponents(string: "https://api.nasa.gov/planetary/apod")!
         urlComponents.queryItems = [
-            "api_key": "DEMO_KEY"
+            "api_key": "DEMO_KEY",
+//            "date": "2021-02-23"    // video 확인을 위해서 media_type이 video인 날을 추가했다.
         ].map { URLQueryItem(name: $0.key, value: $0.value) }
         
         let task = URLSession.shared.dataTask(with: urlComponents.url!) { (data, response, error) in
