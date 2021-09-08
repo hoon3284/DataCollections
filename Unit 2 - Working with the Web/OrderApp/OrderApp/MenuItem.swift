@@ -18,7 +18,7 @@ struct MenuItem: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case detailText = "Description"
+        case detailText = "description" // 대문자 인식 못해서 오류 났었음.
         case price
         case category
         case imageURL = "image_url"

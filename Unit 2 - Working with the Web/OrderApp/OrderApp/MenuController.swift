@@ -48,9 +48,11 @@ class MenuController {
                     let menuResponse = try jsonDecoder.decode(MenuResponse.self, from: data)
                     completion(.success(menuResponse.items))
                 } catch {
+                    // decode 오류
                     completion(.failure(error))
                 }
             } else if let error = error {
+                // urlSession 오류
                 completion(.failure(error))
             }
         }
