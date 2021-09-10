@@ -20,6 +20,7 @@
 		B511FDF526E6900500758A8F /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511FDF426E6900500758A8F /* ResponseModels.swift */; };
 		B511FDF726E6954600758A8F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511FDF626E6954600758A8F /* Order.swift */; };
 		B511FDF926E699FC00758A8F /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511FDF826E699FC00758A8F /* MenuController.swift */; };
+		B52D43AC26EA859100540DE6 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D43AB26EA859100540DE6 /* OrderConfirmationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B511FDF426E6900500758A8F /* ResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModels.swift; sourceTree = "<group>"; };
 		B511FDF626E6954600758A8F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B511FDF826E699FC00758A8F /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		B52D43AB26EA859100540DE6 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,15 +74,16 @@
 			children = (
 				B511FDD626E67EDE00758A8F /* AppDelegate.swift */,
 				B511FDD826E67EDE00758A8F /* SceneDelegate.swift */,
-				B511FDDC26E67EDE00758A8F /* Main.storyboard */,
+				B511FDF626E6954600758A8F /* Order.swift */,
 				B511FDF226E68D2000758A8F /* MenuItem.swift */,
 				B511FDF426E6900500758A8F /* ResponseModels.swift */,
-				B511FDF626E6954600758A8F /* Order.swift */,
 				B511FDF826E699FC00758A8F /* MenuController.swift */,
-				B511FDF026E68BA400758A8F /* MenuItemDetailViewController.swift */,
 				B511FDEA26E6874700758A8F /* CategoryTableViewController.swift */,
 				B511FDEC26E6875D00758A8F /* MenuTableViewController.swift */,
+				B511FDF026E68BA400758A8F /* MenuItemDetailViewController.swift */,
 				B511FDEE26E687AD00758A8F /* OrderTableViewController.swift */,
+				B52D43AB26EA859100540DE6 /* OrderConfirmationViewController.swift */,
+				B511FDDC26E67EDE00758A8F /* Main.storyboard */,
 				B511FDDF26E67EDF00758A8F /* Assets.xcassets */,
 				B511FDE126E67EDF00758A8F /* LaunchScreen.storyboard */,
 				B511FDE426E67EDF00758A8F /* Info.plist */,
@@ -167,6 +170,7 @@
 				B511FDEF26E687AD00758A8F /* OrderTableViewController.swift in Sources */,
 				B511FDD726E67EDE00758A8F /* AppDelegate.swift in Sources */,
 				B511FDD926E67EDE00758A8F /* SceneDelegate.swift in Sources */,
+				B52D43AC26EA859100540DE6 /* OrderConfirmationViewController.swift in Sources */,
 				B511FDEB26E6874700758A8F /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

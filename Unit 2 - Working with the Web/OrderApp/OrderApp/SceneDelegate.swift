@@ -10,13 +10,17 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var orderTabBarItem: UITabBarItem!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        // 여기서도 옵저버를 달고 MenuController.orderUpdateNotification이름의 알림이 오면 updateOrderBadge 함수 호출.
+        NotificationCenter.default.addObserver(self, selector: #selector(updateOrderBadge), name: MenuController.orderUpdatedNotification, object: nil)
+        // orderTabBarItem 값 가져오는 명령/ window의 rootViewController를 UITabBarController로 캐스팅후에 viewcontroller변수에서 2번째의 tabbarItem.
+        orderTabBarItem = (window?.rootViewController as? UITabBarController)?.viewControllers?[1].tabBarItem
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -46,7 +50,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
+    
+    @objc func updateOrderBadge() {
+        // 항목이 있다가 0이 되면 뱃지에 0이 있기 때문에 0이 될땐 뱃지를 없애는 처리.
+        // if-else로 작성하지 않은 이유는.
+        // switch의 case let 구문을 이용하면 훨씬 깨끗한 코드를 작성할 수 있기 때문이다.
+        switch MenuController.shared.order.menuItems.count {
+        case 0:
+            orderTabBarItem.badgeValue = nil
+        case let count:
+            orderTabBarItem.badgeValue = String(count)
+        }
+    }
 
 }
 

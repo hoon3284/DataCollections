@@ -8,6 +8,14 @@
 import Foundation
 
 struct MenuItem: Codable {
+    static let priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencySymbol = "$"
+        
+        return formatter
+    }()
+    
     var id: Int
     var name: String
     var detailText: String // Description이란 변수는 NSObject에도 정의되어 있고 CustomStringConvertible 프로토콜에도 정의되어 있다.
