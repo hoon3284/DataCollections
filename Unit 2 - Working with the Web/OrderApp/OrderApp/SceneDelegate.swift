@@ -75,6 +75,48 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let restoredOrder = userActivity.order {
             MenuController.shared.order = restoredOrder
         }
+        
+        guard let restorationController = StateRestorationController(userActivity: userActivity),
+              // userActivity를 이용한 initializer로 StateRestorationController 생성.
+              let tabBarController = window?.rootViewController as? UITabBarController,
+              // window의 rootViewController를 tabbarController로 얻어온다.
+              tabBarController.viewControllers?.count == 2,
+              // 받아온 tabbarcontroller가 맞는지 확인한다.
+              let categoryTableViewController = (tabBarController.viewControllers?[0] as? UINavigationController)?.topViewController as? CategoryTableViewController
+              // categoryTableViewController와 orderTableViewController는 자동으로 생성되기 때문에 TabBarController의 컨트롤러의 배열에서 0번째 항목을 NavigationController로 캐스팅한 후에 tobViewController 변수의 값을 CategoryTableViewController로 캐스팅해서 얻어온다.
+        else {
+            return
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)    // name은 storyboard 파일 이름. 틀리면 충돌난다.
+        
+        switch restorationController {  // 아까 userActivity를 통해 생성했던 restorationController의 case에 따라 처리해준다.
+        case .categories:
+            // TabBarController를 만들때 CategoryTableViewController는 자동 생성되고 기본 인덱스가 0이므로 따로 해줄 처리가 없으므로 break로 처리해준다.
+            break
+        case .order:
+            // TabbarController를 만들때 orderTableViewController도 자동 생성되므로 선택된 인덱스만 바꿔준다.
+            tabBarController.selectedIndex = 1
+        case .menu(let category):
+            // storyboard의 instantiateViewController 메소드를 호출하여 menuTableViewController를 생성한다.
+            // 이 메소드는 @IBSegueAction 구현하는 것과 비슷하다.
+            let menuTableViewController = storyboard.instantiateViewController(identifier: restorationController.identifier.rawValue, creator: { (coder) in
+                return MenuTableViewController(coder: coder, category: category)
+            })
+            // 위에서 생성한 menuTableViewController를 categoryTableViewController의 navigationController에 푸시한다.
+            categoryTableViewController.navigationController?.pushViewController(menuTableViewController, animated: true)
+        case .menuItemDetail(let menuItem):
+            let menuTableViewController = storyboard.instantiateViewController(identifier: StateRestorationController.Identifier.menu.rawValue, creator: { (coder) in
+                return MenuTableViewController(coder: coder, category: menuItem.category)
+            })
+            
+            let menuItemDetailViewController = storyboard.instantiateViewController(identifier: restorationController.identifier.rawValue, creator: { (coder) in
+                return MenuItemDetailViewController(coder: coder, menuItem: menuItem)
+            })
+            // 두개나 넣기 때문에 animated는 false해주는 것 같다.
+            categoryTableViewController.navigationController?.pushViewController(menuTableViewController, animated: false)
+            categoryTableViewController.navigationController?.pushViewController(menuItemDetailViewController, animated: false)
+        }
     }
 }
 
