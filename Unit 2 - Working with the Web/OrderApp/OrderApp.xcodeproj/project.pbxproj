@@ -21,6 +21,7 @@
 		B511FDF726E6954600758A8F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511FDF626E6954600758A8F /* Order.swift */; };
 		B511FDF926E699FC00758A8F /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511FDF826E699FC00758A8F /* MenuController.swift */; };
 		B52D43AC26EA859100540DE6 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D43AB26EA859100540DE6 /* OrderConfirmationViewController.swift */; };
+		B5CD416B26EE677F00D257E1 /* Restoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD416A26EE677F00D257E1 /* Restoration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		B511FDF626E6954600758A8F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B511FDF826E699FC00758A8F /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		B52D43AB26EA859100540DE6 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
+		B5CD416A26EE677F00D257E1 /* Restoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restoration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				B511FDF226E68D2000758A8F /* MenuItem.swift */,
 				B511FDF426E6900500758A8F /* ResponseModels.swift */,
 				B511FDF826E699FC00758A8F /* MenuController.swift */,
+				B5CD416A26EE677F00D257E1 /* Restoration.swift */,
 				B511FDEA26E6874700758A8F /* CategoryTableViewController.swift */,
 				B511FDEC26E6875D00758A8F /* MenuTableViewController.swift */,
 				B511FDF026E68BA400758A8F /* MenuItemDetailViewController.swift */,
@@ -163,6 +166,7 @@
 			files = (
 				B511FDF926E699FC00758A8F /* MenuController.swift in Sources */,
 				B511FDF326E68D2000758A8F /* MenuItem.swift in Sources */,
+				B5CD416B26EE677F00D257E1 /* Restoration.swift in Sources */,
 				B511FDED26E6875D00758A8F /* MenuTableViewController.swift in Sources */,
 				B511FDF526E6900500758A8F /* ResponseModels.swift in Sources */,
 				B511FDF726E6954600758A8F /* Order.swift in Sources */,

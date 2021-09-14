@@ -23,6 +23,11 @@ class CategoryTableViewController: UITableViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        MenuController.shared.updateUserActivity(with: .categories)
+    }
+    
     func updateUI(with categories: [String]) {
         DispatchQueue.main.async {
             self.categories = categories

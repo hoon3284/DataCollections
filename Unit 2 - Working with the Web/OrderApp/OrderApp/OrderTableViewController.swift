@@ -20,6 +20,11 @@ class OrderTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(tableView!, selector: #selector(UITableView.reloadData), name: MenuController.orderUpdatedNotification, object: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        MenuController.shared.updateUserActivity(with: .order)
+    }
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // 모든 cell을 선택할 수 있기 때문에 그냥 return true, 따로 조작할 필요가 있으면 이쪽에 작성.
         return true

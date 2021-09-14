@@ -9,10 +9,12 @@ import UIKit
 
 class MenuController {
     static let shared = MenuController()
+    var userActivity = NSUserActivity(activityType: "com.example.OrderApp.order")
     static let orderUpdatedNotification = Notification.Name("MenuController.orderUpdated")
     var order = Order() {
         didSet {
             NotificationCenter.default.post(name: MenuController.orderUpdatedNotification, object: nil)
+            userActivity.order = order
         }
     }
     let baseURL = URL(string: "http://localhost:8080/")!
@@ -22,7 +24,7 @@ class MenuController {
         let categoriesURL = baseURL.appendingPathComponent("categories")
         
         let task = URLSession.shared.dataTask(with: categoriesURL) { (data, response, error) in
-            print(response ?? "none")
+//            print(response ?? "none")
             if let data = data {
                 do {
                     let jsonDecoder = JSONDecoder()
@@ -48,7 +50,7 @@ class MenuController {
         components.queryItems = [URLQueryItem(name: "category", value: categoryName)]
         let menuURL = components.url!
         let task = URLSession.shared.dataTask(with: menuURL) { (data, response, error) in
-            print(response ?? "none")
+//            print(response ?? "none")
             if let data = data {
                 do {
                     let jsonDecoder = JSONDecoder()
@@ -115,5 +117,17 @@ class MenuController {
             }
         }
         task.resume()
+    }
+    
+    func updateUserActivity(with controller: StateRestorationController) {
+        switch controller {
+        case .menu(let category):
+            userActivity.menuCategory = category
+        case .menuItemDetail(let menuItem):
+            userActivity.menuItem = menuItem
+        case .order, .categories:
+            break
+        }
+        userActivity.controllerIdentifier = controller.identifier
     }
 }
