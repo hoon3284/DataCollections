@@ -26,11 +26,19 @@ class BasicCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        // 위에 호출은 삭제. 이유는 스토리보드에 prototype cell이 이미 set up 되어 있기 때문에.라고 책에 적힘.
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
     }
     
     private func generateLayout() -> UICollectionViewLayout {
         let spacing: CGFloat = 10.0
+        
+        // NSCollectionDimension의 class func
+        // .absolute(): 절대 크기
+        // .estimated(): 런타임에 크기가 변할 가능성이 있는 경우(시스템의 글꼴 크기 변경과 같은) estimated를 사용합니다. 이는 시스템이 예상 크기를 기반으로 실제크기를 계산합니다.
+        // estimated가 잘 이해가 안감 나중에 다시 확인.
+        // .fractionalWidth/Height(): 현재 자신이 속한 컨테이너의 크기를 기반을 비율로써 자신의 크기를 정함. 0.0~1.0(CGFloat) fractional: 분수의
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
