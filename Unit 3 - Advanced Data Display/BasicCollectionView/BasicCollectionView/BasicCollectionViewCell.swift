@@ -2,7 +2,7 @@
 //  BasicCollectionViewCell.swift
 //  BasicCollectionView
 //
-//  Created by wickedRun on 2021/09/17.
+//  Created by wickedRun on 2021/09/18.
 //
 
 import UIKit

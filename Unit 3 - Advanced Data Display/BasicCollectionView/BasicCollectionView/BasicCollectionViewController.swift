@@ -2,47 +2,49 @@
 //  BasicCollectionViewController.swift
 //  BasicCollectionView
 //
-//  Created by wickedRun on 2021/09/17.
+//  Created by wickedRun on 2021/09/18.
 //
 
 import UIKit
 
 private let reuseIdentifier = "Cell"
+private let items = [
+    "Alabama", "Alaska", "Arizona", "Arkansas", "California",
+    "Colorado", "Connecticut", "Delaware", "Florida",
+    "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
+    "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland",
+    "Massachusetts", "Michigan", "Minnesota", "Mississippi",
+    "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire",
+    "New Jersey", "New Mexico", "New York", "North Carolina",
+    "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
+    "Rhode Island", "South Carolina", "South Dakota", "Tennessee",
+    "Texas", "Utah", "Vermont", "Virginia", "Washington",
+    "West Virginia", "Wisconsin", "Wyoming"
+]
 
 class BasicCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        // 위에 호출은 삭제. 이유는 스토리보드에 prototype cell이 이미 set up 되어 있기 때문에.
-
-        // Do any additional setup after loading the view.
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
     }
     
     private func generateLayout() -> UICollectionViewLayout {
-        // NSCollectionDimension의 class func
-        // .absolute(): 절대 크기
-        // .estimated(): 런타임에 크기가 변할 가능성이 있는 경우(시스템의 글꼴 크기 변경과 같은) estimated를 사용합니다. 이는 시스템이 예상 크기를 기반으로 실제크기를 계산합니다.
-        // estimated가 잘 이해가 안감 나중에 다시 확인.
-        // .fractionalWidth/Height(): 현재 자신이 속한 컨테이너의 크기를 기반을 비율로써 자신의 크기를 정함. 0.0~1.0(CGFloat) fractional: 분수의
+        let spacing: CGFloat = 10.0
         
-        // Item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        // fractionalWidth fractional: 분수의 라는 뜻이므로 fractionalWidth가 1이면 full이라는 뜻같음.
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+//        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: spacing, bottom: 0, trailing: spacing)
         
-        // Group
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(70.0))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        group.contentInsets = NSDirectionalEdgeInsets(top: spacing, leading: spacing, bottom: 0, trailing: spacing)
+        // 왜 나는 주석된 줄만 썻을때 Arkansas와 California사이에 빈칸이 잘되어있는지 모르겠음 책에는 안된다고 적혀있음.그래서 위 group.contentInsets를 적어주는 것 같음.
+        // 그리고 contentInsets 설정을 section 밑에 적으라고 했는데 나는 그렇게하면 안된다.
         
-        // Section
         let section = NSCollectionLayoutSection(group: group)
+//        section.interGroupSpacing = spacing
+        
         let layout = UICollectionViewCompositionalLayout(section: section)
         
         return layout
@@ -60,22 +62,21 @@ class BasicCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+    // 구현을 안하면 기본값으로 1이 리턴된다.
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return items.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! BasicCollectionViewCell
     
-        // Configure the cell
-    
+        cell.label.text = items[indexPath.item]
         return cell
     }
 
