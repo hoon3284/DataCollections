@@ -24,6 +24,10 @@ class EmojiCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(70)), subitem: item, count: 1)
+        let section = NSCollectionLayoutSection(group: group)
+        collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(section: section)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +79,30 @@ class EmojiCollectionViewController: UICollectionViewController {
             let emoji = sourceViewController.emoji else { return }
         
         // Update the data source and collection view
+        if let path = collectionView.indexPathsForSelectedItems?.first {
+            emojis[path.row] = emoji
+            collectionView.reloadItems(at: [path])
+        } else {
+            let newIndexPath = IndexPath(row: emojis.count, section: 0)
+            emojis.append(emoji)
+            collectionView.insertItems(at: [newIndexPath])
+        }
     }
 
+    override func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (elements) -> UIMenu? in
+            let delete = UIAction(title: "Delete") { (action) in
+                self.deleteEmoji(at: indexPath)
+            }
+            return UIMenu(title: "", image: nil, identifier: nil, options: [], children: [delete])
+        }
+        
+        return config
+    }
+    
+    func deleteEmoji(at indexPath: IndexPath) {
+        emojis.remove(at: indexPath.row)
+        collectionView.deleteItems(at: [indexPath])
+    }
+    
 }
