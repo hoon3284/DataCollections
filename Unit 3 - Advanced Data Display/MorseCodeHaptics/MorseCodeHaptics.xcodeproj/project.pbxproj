@@ -17,6 +17,7 @@
 		182147D723FEEB88005B6EFE /* MorseCodeWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182147D623FEEB88005B6EFE /* MorseCodeWord.swift */; };
 		188C8AFE23FEFCA500CD2B14 /* MorseCodeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C8AFD23FEFCA500CD2B14 /* MorseCodeMessage.swift */; };
 		188C8B0023FF011700CD2B14 /* MorseCodeSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C8AFF23FF011700CD2B14 /* MorseCodeSignal.swift */; };
+		B500BAC72700C003002B1725 /* HapticsMorseCodePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B500BAC62700C003002B1725 /* HapticsMorseCodePlayer.swift */; };
 		B50418D326FF369800F43465 /* MorseCodePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50418D226FF369800F43465 /* MorseCodePlayer.swift */; };
 		B50418D526FF373C00F43465 /* MorseCodePlaybackEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50418D426FF373C00F43465 /* MorseCodePlaybackEvent.swift */; };
 		B50418D726FF423700F43465 /* MorseCodePlaybackEventRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50418D626FF423700F43465 /* MorseCodePlaybackEventRepresentable.swift */; };
@@ -36,6 +37,7 @@
 		182147D623FEEB88005B6EFE /* MorseCodeWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseCodeWord.swift; sourceTree = "<group>"; };
 		188C8AFD23FEFCA500CD2B14 /* MorseCodeMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseCodeMessage.swift; sourceTree = "<group>"; };
 		188C8AFF23FF011700CD2B14 /* MorseCodeSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseCodeSignal.swift; sourceTree = "<group>"; };
+		B500BAC62700C003002B1725 /* HapticsMorseCodePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsMorseCodePlayer.swift; sourceTree = "<group>"; };
 		B50418D226FF369800F43465 /* MorseCodePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseCodePlayer.swift; sourceTree = "<group>"; };
 		B50418D426FF373C00F43465 /* MorseCodePlaybackEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseCodePlaybackEvent.swift; sourceTree = "<group>"; };
 		B50418D626FF423700F43465 /* MorseCodePlaybackEventRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseCodePlaybackEventRepresentable.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				182147C223FEEB49005B6EFE /* ViewController.swift */,
 				B50418D226FF369800F43465 /* MorseCodePlayer.swift */,
 				B50418D826FFA53800F43465 /* VisualMorseCodePlayerView.swift */,
+				B500BAC62700C003002B1725 /* HapticsMorseCodePlayer.swift */,
 				B50418D426FF373C00F43465 /* MorseCodePlaybackEvent.swift */,
 				B50418D626FF423700F43465 /* MorseCodePlaybackEventRepresentable.swift */,
 				182147C423FEEB49005B6EFE /* Main.storyboard */,
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				182147C323FEEB49005B6EFE /* ViewController.swift in Sources */,
+				B500BAC72700C003002B1725 /* HapticsMorseCodePlayer.swift in Sources */,
 				B50418D526FF373C00F43465 /* MorseCodePlaybackEvent.swift in Sources */,
 				182147BF23FEEB49005B6EFE /* AppDelegate.swift in Sources */,
 				188C8AFE23FEFCA500CD2B14 /* MorseCodeMessage.swift in Sources */,
@@ -318,13 +322,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U6Q9G3RA4Y;
 				INFOPLIST_FILE = MorseCodeHaptics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.MorseCodeHaptics;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MorseCodeHaptics1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -336,13 +340,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U6Q9G3RA4Y;
 				INFOPLIST_FILE = MorseCodeHaptics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.MorseCodeHaptics;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MorseCodeHaptics1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
