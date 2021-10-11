@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S4a-BL-wlH">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S4a-BL-wlH">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,21 +15,21 @@
             <objects>
                 <tableViewController storyboardIdentifier="TableView" id="qIW-uK-13i" customClass="StoreItemListTableViewController" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" estimatedRowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" id="HRW-jz-kQV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="739"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="771"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Item" id="tIu-nD-Q6p" customClass="ItemTableViewCell" customModule="iTunesSearch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="123"/>
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="123"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tIu-nD-Q6p" id="SlZ-m5-4z6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="123"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gwt-Zi-hUz">
-                                            <rect key="frame" x="16" y="10.333333333333336" width="100" height="102.33333333333333"/>
-                                            <color key="tintColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="20" y="10.666666666666664" width="100" height="102.33333333333334"/>
+                                            <color key="tintColor" systemColor="tertiaryLabelColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" priority="750" constant="100" id="6s9-Qz-x7c"/>
                                                 <constraint firstAttribute="width" constant="100" id="J3f-eQ-4g6"/>
@@ -35,13 +37,13 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBD-xX-crH">
-                                            <rect key="frame" x="124" y="38.666666666666664" width="235" height="14.333333333333336"/>
+                                            <rect key="frame" x="128" y="33" width="242" height="13.333333333333336"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ts-YR-FcD">
-                                            <rect key="frame" x="124" y="11" width="235" height="24"/>
+                                            <rect key="frame" x="128" y="10.999999999999998" width="242" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -85,7 +87,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S4a-BL-wlH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rCT-I4-ocd">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -102,23 +104,23 @@
             <objects>
                 <viewController id="cnb-xA-AQ8" customClass="StoreItemContainerViewController" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qP8-hA-sPK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pU-66-EiJ" userLabel="Collection Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="739"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="771"/>
                                 <connections>
-                                    <segue destination="T5c-mz-q36" kind="embed" id="OWj-YM-nRf"/>
+                                    <segue destination="T5c-mz-q36" kind="embed" id="Hgs-JM-ORm"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1EB-Bp-5rM" userLabel="Table Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="739"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="771"/>
                                 <connections>
                                     <segue destination="qIW-uK-13i" kind="embed" id="xrb-Pq-N3b"/>
                                 </connections>
                             </containerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0BJ-EF-gmA">
-                                <rect key="frame" x="141.33333333333334" y="747" width="92.333333333333343" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0BJ-EF-gmA">
+                                <rect key="frame" x="149" y="779" width="92.333333333333314" height="32"/>
                                 <segments>
                                     <segment title="" image="list.dash" catalog="system"/>
                                     <segment title="" image="square.grid.3x2" catalog="system"/>
@@ -128,7 +130,8 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="0oD-u0-phX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0BJ-EF-gmA" firstAttribute="top" secondItem="1EB-Bp-5rM" secondAttribute="bottom" constant="8" id="1v5-mY-qyx"/>
                             <constraint firstAttribute="trailing" secondItem="4pU-66-EiJ" secondAttribute="trailing" id="63r-Ih-oU6"/>
@@ -141,7 +144,6 @@
                             <constraint firstItem="4pU-66-EiJ" firstAttribute="top" secondItem="qP8-hA-sPK" secondAttribute="top" id="mKx-BR-Nnm"/>
                             <constraint firstItem="4pU-66-EiJ" firstAttribute="leading" secondItem="qP8-hA-sPK" secondAttribute="leading" id="r3T-eA-cXI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="0oD-u0-phX"/>
                     </view>
                     <navigationItem key="navigationItem" id="vaz-7O-pp9"/>
                     <connections>
@@ -158,9 +160,9 @@
             <objects>
                 <collectionViewController id="T5c-mz-q36" customClass="StoreItemCollectionViewController" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="KcJ-JY-FOL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="739"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="771"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="8" id="5mR-E2-0Jh">
                             <size key="itemSize" width="108" height="166"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -215,9 +217,6 @@
                             <outlet property="delegate" destination="T5c-mz-q36" id="KHK-Fa-StW"/>
                         </connections>
                     </collectionView>
-                    <connections>
-                        <outlet property="flowLayout" destination="5mR-E2-0Jh" id="4nO-f1-QHh"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnW-Ow-3lL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -225,8 +224,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list.dash" catalog="system" width="64" height="42"/>
-        <image name="photo" catalog="system" width="64" height="46"/>
-        <image name="square.grid.3x2" catalog="system" width="64" height="40"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="square.grid.3x2" catalog="system" width="128" height="80"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
