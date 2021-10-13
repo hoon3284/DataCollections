@@ -24,4 +24,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         return true
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.actionIdentifier == Alarm.snoozeActionID {
+            let snoozeDate = Date().addingTimeInterval(9 * 60) // TimeInterval represents seconds
+            let alarm = Alarm(date: snoozeDate)
+            alarm.schedule { granted in
+                if !granted {
+                    print("Can't schedule snooze because notification permissions were revoked.")
+                }
+            }
+        }
+        
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+        Alarm.scheduled = nil
+    }
 }
