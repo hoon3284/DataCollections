@@ -196,6 +196,16 @@ class BillDetailTableViewController: UITableViewController, UITextFieldDelegate 
             return 44
         }
     }
+    
+    func presentNeedAutorizationAlert() {
+        let alert = UIAlertController(title: "Authorization Needed", message: "We can't set reminders for you without notification permissions. Please go to the iOS Settings app and grant us notification permissions if you wish to make use of reminders.", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
         
     @IBAction func dueDatePickerValueChanged(_ sender: UIDatePicker) {
         updateDueDateUI()
@@ -228,12 +238,16 @@ class BillDetailTableViewController: UITableViewController, UITextFieldDelegate 
         bill.paidDate = paidDate
         
         if remindSwitch.isOn {
-            bill.remindDate = remindDatePicker.date
+            bill.scheduleReminder(on: remindDatePicker.date) { (updatedBill) in
+                if updatedBill.notificationID == nil {
+                    self.presentNeedAutorizationAlert()
+                }
+                Database.shared.updateAndSave(updatedBill)
+            }
         } else {
-            bill.remindDate = nil
+            bill.removeReminder()
+            Database.shared.updateAndSave(bill)
         }
-        
-        Database.shared.updateAndSave(bill)
     }
     
     @objc func cancelButtonTapped() {
