@@ -15,12 +15,12 @@
 		28EFEA37271EC7A900CD4C33 /* PrimarySecondaryTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFEA36271EC7A900CD4C33 /* PrimarySecondaryTextCollectionViewCell.swift */; };
 		B56E6871271B5E210019E1E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56E6870271B5E210019E1E1 /* AppDelegate.swift */; };
 		B56E6873271B5E210019E1E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56E6872271B5E210019E1E1 /* SceneDelegate.swift */; };
-		B56E6875271B5E210019E1E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56E6874271B5E210019E1E1 /* ViewController.swift */; };
 		B56E6878271B5E210019E1E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56E6876271B5E210019E1E1 /* Main.storyboard */; };
 		B56E687A271B5E220019E1E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B56E6879271B5E220019E1E1 /* Assets.xcassets */; };
 		B56E687D271B5E220019E1E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56E687B271B5E220019E1E1 /* LaunchScreen.storyboard */; };
 		B589FD8A27201BCA0067F06F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589FD8927201BCA0067F06F /* Settings.swift */; };
 		B589FD8C27205DEC0067F06F /* UICollectionViewDiffableDataSource+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589FD8B27205DEC0067F06F /* UICollectionViewDiffableDataSource+ViewModel.swift */; };
+		B58CE6C5272154210056D2D5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CE6C4272154210056D2D5 /* User.swift */; };
 		B5AC3B6C27209670008624E6 /* NamedSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC3B6B27209670008624E6 /* NamedSectionHeaderView.swift */; };
 		B5C0CB8A271C930B00218A39 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0CB89271C930B00218A39 /* HomeCollectionViewController.swift */; };
 		B5C0CB8C271C931A00218A39 /* UserCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0CB8B271C931A00218A39 /* UserCollectionViewController.swift */; };
@@ -40,13 +40,13 @@
 		B56E686D271B5E210019E1E1 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56E6870271B5E210019E1E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B56E6872271B5E210019E1E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B56E6874271B5E210019E1E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B56E6877271B5E210019E1E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B56E6879271B5E220019E1E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B56E687C271B5E220019E1E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B56E687E271B5E220019E1E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B589FD8927201BCA0067F06F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B589FD8B27205DEC0067F06F /* UICollectionViewDiffableDataSource+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDiffableDataSource+ViewModel.swift"; sourceTree = "<group>"; };
+		B58CE6C4272154210056D2D5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B5AC3B6B27209670008624E6 /* NamedSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedSectionHeaderView.swift; sourceTree = "<group>"; };
 		B5C0CB89271C930B00218A39 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		B5C0CB8B271C931A00218A39 /* UserCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewController.swift; sourceTree = "<group>"; };
@@ -88,23 +88,23 @@
 			children = (
 				B56E6870271B5E210019E1E1 /* AppDelegate.swift */,
 				B56E6872271B5E210019E1E1 /* SceneDelegate.swift */,
-				B56E6874271B5E210019E1E1 /* ViewController.swift */,
 				B56E6876271B5E210019E1E1 /* Main.storyboard */,
-				28EFEA36271EC7A900CD4C33 /* PrimarySecondaryTextCollectionViewCell.swift */,
 				28EFEA32271EB18700CD4C33 /* APIRequest.swift */,
 				28EFEA34271EC30B00CD4C33 /* APIService.swift */,
 				28EFEA2C271EAF2800CD4C33 /* Habit.swift */,
 				28EFEA2E271EAF2E00CD4C33 /* Category.swift */,
 				28EFEA30271EAF3300CD4C33 /* Color.swift */,
-				B589FD8927201BCA0067F06F /* Settings.swift */,
+				28EFEA36271EC7A900CD4C33 /* PrimarySecondaryTextCollectionViewCell.swift */,
 				B5C0CB89271C930B00218A39 /* HomeCollectionViewController.swift */,
 				B5C0CB8D271C932300218A39 /* HabitCollectionViewController.swift */,
 				B5C0CB8B271C931A00218A39 /* UserCollectionViewController.swift */,
+				B58CE6C4272154210056D2D5 /* User.swift */,
 				B5C0CB8F271C932E00218A39 /* LogHabitCollectionViewController.swift */,
 				B5AC3B6B27209670008624E6 /* NamedSectionHeaderView.swift */,
 				B589FD8B27205DEC0067F06F /* UICollectionViewDiffableDataSource+ViewModel.swift */,
 				B5C0CB91271CB56700218A39 /* HabitDetailViewController.swift */,
 				B5C0CB93271CB57100218A39 /* UserDetailViewController.swift */,
+				B589FD8927201BCA0067F06F /* Settings.swift */,
 				B56E6879271B5E220019E1E1 /* Assets.xcassets */,
 				B56E687B271B5E220019E1E1 /* LaunchScreen.storyboard */,
 				B56E687E271B5E220019E1E1 /* Info.plist */,
@@ -184,7 +184,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C0CB90271C932E00218A39 /* LogHabitCollectionViewController.swift in Sources */,
-				B56E6875271B5E210019E1E1 /* ViewController.swift in Sources */,
 				28EFEA33271EB18700CD4C33 /* APIRequest.swift in Sources */,
 				B5C0CB94271CB57100218A39 /* UserDetailViewController.swift in Sources */,
 				B5C0CB8C271C931A00218A39 /* UserCollectionViewController.swift in Sources */,
@@ -198,6 +197,7 @@
 				B56E6871271B5E210019E1E1 /* AppDelegate.swift in Sources */,
 				B589FD8C27205DEC0067F06F /* UICollectionViewDiffableDataSource+ViewModel.swift in Sources */,
 				B56E6873271B5E210019E1E1 /* SceneDelegate.swift in Sources */,
+				B58CE6C5272154210056D2D5 /* User.swift in Sources */,
 				28EFEA37271EC7A900CD4C33 /* PrimarySecondaryTextCollectionViewCell.swift in Sources */,
 				B5C0CB8E271C932300218A39 /* HabitCollectionViewController.swift in Sources */,
 				28EFEA2F271EAF2E00CD4C33 /* Category.swift in Sources */,

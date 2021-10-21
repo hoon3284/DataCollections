@@ -194,14 +194,27 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ODi-7J-g9g">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="User" id="ODi-7J-g9g" customClass="PrimarySecondaryTextCollectionViewCell" customModule="Habits" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5lP-KO-Rpr">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzn-OF-ml2">
+                                            <rect key="frame" x="43" y="53.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fzn-OF-ml2" firstAttribute="centerY" secondItem="5lP-KO-Rpr" secondAttribute="centerY" id="PZu-K2-eVH"/>
+                                        <constraint firstItem="fzn-OF-ml2" firstAttribute="centerX" secondItem="5lP-KO-Rpr" secondAttribute="centerX" id="nAQ-fr-fzx"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="primaryTextLabel" destination="fzn-OF-ml2" id="kx3-af-50D"/>
                                     <segue destination="UY7-PH-P68" kind="show" id="fh0-5r-f9e"/>
                                 </connections>
                             </collectionViewCell>
