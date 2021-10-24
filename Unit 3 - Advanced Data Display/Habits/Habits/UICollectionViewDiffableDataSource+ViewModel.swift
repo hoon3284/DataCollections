@@ -22,6 +22,8 @@ extension UICollectionViewDiffableDataSource {
             
             snapshot.appendSections([sectionID])
             snapshot.appendItems(sectionItems, toSection: sectionID)
+            // reload해주는 이유는 값은 바꼈으나, dataSource가 가지고 있는 cell들의 text들은 그대로라서 강제로 reload해주어 text들을 혹은 순서들을 새로고침함.
+            snapshot.reloadItems(sectionItems)
         }
         
         self.apply(snapshot, animatingDifferences: animatingDifferences)
