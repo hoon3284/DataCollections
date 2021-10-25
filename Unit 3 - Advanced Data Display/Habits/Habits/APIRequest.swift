@@ -5,7 +5,7 @@
 //  Created by wickedRun on 2021/10/19.
 //
 
-import Foundation
+import UIKit
 
 protocol APIRequest {
     associatedtype Response
@@ -63,6 +63,25 @@ extension APIRequest where Response: Decodable {
                 }
             } catch {
                 
+            }
+        }.resume()
+    }
+}
+
+enum ImageRequestError: Error {
+    case couldNotInitializeFromData
+}
+
+extension APIRequest where Response == UIImage {
+    func send(completion: @escaping (Result<Self.Response, Error>) -> Void) {
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let data = data,
+               let image = UIImage(data: data) {
+                completion(.success(image))
+            } else if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.failure(ImageRequestError.couldNotInitializeFromData))
             }
         }.resume()
     }

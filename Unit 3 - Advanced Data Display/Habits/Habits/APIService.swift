@@ -5,7 +5,7 @@
 //  Created by wickedRun on 2021/10/19.
 //
 
-import Foundation
+import UIKit
 
 struct HabitRequest: APIRequest {
     typealias Response = [String: Habit]
@@ -35,4 +35,36 @@ struct HabitStatisticsRequest: APIRequest {
             return nil
         }
     }
+}
+
+struct UserStatisticsRequest: APIRequest {
+    typealias Response = [UserStatistics]
+    
+    var userIDs: [String]?
+    
+    var path: String { "/userStats" }
+    
+    var queryItems: [URLQueryItem]? {
+        if let userIDs = userIDs {
+            return [URLQueryItem(name: "ids", value: userIDs.joined(separator: ","))]
+        } else {
+            return nil
+        }
+    }
+}
+
+struct HabitLeadStatisticsRequest: APIRequest {
+    typealias Response = UserStatistics
+    
+    var userID: String
+    
+    var path: String {"/userLeadingStats/\(userID)"}
+}
+
+struct ImageRequest: APIRequest {
+    typealias Response = UIImage
+    
+    var imageID: String
+    
+    var path: String { "/images/" + imageID }
 }
