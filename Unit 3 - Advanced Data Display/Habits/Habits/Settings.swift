@@ -60,4 +60,6 @@ struct Settings {
         
         favoriteHabits = favorites
     }
+    
+    let currentUser = User(id: "activeUser", name: "Active User", color: nil, bio: nil)
 }

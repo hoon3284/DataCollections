@@ -32,6 +32,7 @@
 		B5C0CB90271C932E00218A39 /* LogHabitCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0CB8F271C932E00218A39 /* LogHabitCollectionViewController.swift */; };
 		B5C0CB92271CB56700218A39 /* HabitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0CB91271CB56700218A39 /* HabitDetailViewController.swift */; };
 		B5C0CB94271CB57100218A39 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0CB93271CB57100218A39 /* UserDetailViewController.swift */; };
+		B5CCE63E2728270300ACD9C3 /* LoggedHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCE63D2728270300ACD9C3 /* LoggedHabit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		B5C0CB8F271C932E00218A39 /* LogHabitCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHabitCollectionViewController.swift; sourceTree = "<group>"; };
 		B5C0CB91271CB56700218A39 /* HabitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewController.swift; sourceTree = "<group>"; };
 		B5C0CB93271CB57100218A39 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		B5CCE63D2728270300ACD9C3 /* LoggedHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedHabit.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				B5C0CB8B271C931A00218A39 /* UserCollectionViewController.swift */,
 				B58CE6C4272154210056D2D5 /* User.swift */,
 				B5C0CB8F271C932E00218A39 /* LogHabitCollectionViewController.swift */,
+				B5CCE63D2728270300ACD9C3 /* LoggedHabit.swift */,
 				B5AC3B6B27209670008624E6 /* NamedSectionHeaderView.swift */,
 				B589FD8B27205DEC0067F06F /* UICollectionViewDiffableDataSource+ViewModel.swift */,
 				B5C0CB91271CB56700218A39 /* HabitDetailViewController.swift */,
@@ -207,6 +210,7 @@
 				28EFEA2D271EAF2800CD4C33 /* Habit.swift in Sources */,
 				B5A6F9EE272352000063214A /* UserCount.swift in Sources */,
 				B589FD8A27201BCA0067F06F /* Settings.swift in Sources */,
+				B5CCE63E2728270300ACD9C3 /* LoggedHabit.swift in Sources */,
 				B56E6871271B5E210019E1E1 /* AppDelegate.swift in Sources */,
 				28EFEA392726A00B00CD4C33 /* UserStatistics.swift in Sources */,
 				28EFEA3B2726A06000CD4C33 /* HabitCount.swift in Sources */,
