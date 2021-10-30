@@ -22,6 +22,8 @@
 		B56E687D271B5E220019E1E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56E687B271B5E220019E1E1 /* LaunchScreen.storyboard */; };
 		B589FD8A27201BCA0067F06F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589FD8927201BCA0067F06F /* Settings.swift */; };
 		B589FD8C27205DEC0067F06F /* UICollectionViewDiffableDataSource+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589FD8B27205DEC0067F06F /* UICollectionViewDiffableDataSource+ViewModel.swift */; };
+		B58A8B222729EA8600F8687A /* LeaderboardHabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A8B212729EA8600F8687A /* LeaderboardHabitCollectionViewCell.swift */; };
+		B58A8B242729F5F800F8687A /* CombinedStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A8B232729F5F800F8687A /* CombinedStatistics.swift */; };
 		B58CE6C5272154210056D2D5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CE6C4272154210056D2D5 /* User.swift */; };
 		B5A6F9EC272351100063214A /* HabitStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6F9EB272351100063214A /* HabitStatistics.swift */; };
 		B5A6F9EE272352000063214A /* UserCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6F9ED272352000063214A /* UserCount.swift */; };
@@ -53,6 +55,8 @@
 		B56E687E271B5E220019E1E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B589FD8927201BCA0067F06F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B589FD8B27205DEC0067F06F /* UICollectionViewDiffableDataSource+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDiffableDataSource+ViewModel.swift"; sourceTree = "<group>"; };
+		B58A8B212729EA8600F8687A /* LeaderboardHabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardHabitCollectionViewCell.swift; sourceTree = "<group>"; };
+		B58A8B232729F5F800F8687A /* CombinedStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedStatistics.swift; sourceTree = "<group>"; };
 		B58CE6C4272154210056D2D5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B5A6F9EB272351100063214A /* HabitStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStatistics.swift; sourceTree = "<group>"; };
 		B5A6F9ED272352000063214A /* UserCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCount.swift; sourceTree = "<group>"; };
@@ -101,12 +105,14 @@
 				B56E6876271B5E210019E1E1 /* Main.storyboard */,
 				28EFEA32271EB18700CD4C33 /* APIRequest.swift */,
 				28EFEA34271EC30B00CD4C33 /* APIService.swift */,
+				28EFEA36271EC7A900CD4C33 /* PrimarySecondaryTextCollectionViewCell.swift */,
+				B58A8B212729EA8600F8687A /* LeaderboardHabitCollectionViewCell.swift */,
+				B5C0CB89271C930B00218A39 /* HomeCollectionViewController.swift */,
+				B58A8B232729F5F800F8687A /* CombinedStatistics.swift */,
+				B5C0CB8D271C932300218A39 /* HabitCollectionViewController.swift */,
 				28EFEA2C271EAF2800CD4C33 /* Habit.swift */,
 				28EFEA2E271EAF2E00CD4C33 /* Category.swift */,
 				28EFEA30271EAF3300CD4C33 /* Color.swift */,
-				28EFEA36271EC7A900CD4C33 /* PrimarySecondaryTextCollectionViewCell.swift */,
-				B5C0CB89271C930B00218A39 /* HomeCollectionViewController.swift */,
-				B5C0CB8D271C932300218A39 /* HabitCollectionViewController.swift */,
 				B5C0CB8B271C931A00218A39 /* UserCollectionViewController.swift */,
 				B58CE6C4272154210056D2D5 /* User.swift */,
 				B5C0CB8F271C932E00218A39 /* LogHabitCollectionViewController.swift */,
@@ -214,6 +220,7 @@
 				B56E6871271B5E210019E1E1 /* AppDelegate.swift in Sources */,
 				28EFEA392726A00B00CD4C33 /* UserStatistics.swift in Sources */,
 				28EFEA3B2726A06000CD4C33 /* HabitCount.swift in Sources */,
+				B58A8B242729F5F800F8687A /* CombinedStatistics.swift in Sources */,
 				B589FD8C27205DEC0067F06F /* UICollectionViewDiffableDataSource+ViewModel.swift in Sources */,
 				B56E6873271B5E210019E1E1 /* SceneDelegate.swift in Sources */,
 				B58CE6C5272154210056D2D5 /* User.swift in Sources */,
@@ -221,6 +228,7 @@
 				B5A6F9EC272351100063214A /* HabitStatistics.swift in Sources */,
 				B5C0CB8E271C932300218A39 /* HabitCollectionViewController.swift in Sources */,
 				28EFEA2F271EAF2E00CD4C33 /* Category.swift in Sources */,
+				B58A8B222729EA8600F8687A /* LeaderboardHabitCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +385,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -405,6 +414,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

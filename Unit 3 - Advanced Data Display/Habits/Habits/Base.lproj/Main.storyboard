@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sGq-L3-XCw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sGq-L3-XCw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -41,13 +41,82 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vgo-44-oc2">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LeaderboardHabit" id="vgo-44-oc2" customClass="LeaderboardHabitCollectionViewCell" customModule="Habits" customModuleProvider="target">
+                                <rect key="frame" x="53" y="0.0" width="308" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YSF-9G-YNg">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="308" height="114"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTc-Jk-Gha">
+                                            <rect key="frame" x="8" y="8" width="100" height="23"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leader" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOF-w7-g58">
+                                            <rect key="frame" x="261" y="69" width="39" height="14.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secondary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bq-dv-ZZd">
+                                            <rect key="frame" x="239.5" y="91.5" width="60.5" height="14.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UTc-Jk-Gha" firstAttribute="top" secondItem="YSF-9G-YNg" secondAttribute="top" constant="8" id="5Ol-Ig-0Mu"/>
+                                        <constraint firstAttribute="trailing" secondItem="QOF-w7-g58" secondAttribute="trailing" constant="8" id="5d0-Ut-EN5"/>
+                                        <constraint firstAttribute="bottom" secondItem="5bq-dv-ZZd" secondAttribute="bottom" constant="8" id="KDZ-mq-MOk"/>
+                                        <constraint firstItem="5bq-dv-ZZd" firstAttribute="top" secondItem="QOF-w7-g58" secondAttribute="bottom" constant="8" id="cy5-b4-y5P"/>
+                                        <constraint firstAttribute="trailing" secondItem="5bq-dv-ZZd" secondAttribute="trailing" constant="8" id="pnG-h3-eFR"/>
+                                        <constraint firstItem="UTc-Jk-Gha" firstAttribute="leading" secondItem="YSF-9G-YNg" secondAttribute="leading" constant="8" id="zHp-gR-kcz"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="308" height="114"/>
+                                <connections>
+                                    <outlet property="habitNameLabel" destination="UTc-Jk-Gha" id="6YQ-V6-rvE"/>
+                                    <outlet property="leaderLabel" destination="QOF-w7-g58" id="kPo-Qo-PrW"/>
+                                    <outlet property="secondaryLabel" destination="5bq-dv-ZZd" id="Iuk-yB-XOp"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="FollowedUser" id="nFY-pF-pOn" customClass="PrimarySecondaryTextCollectionViewCell" customModule="Habits" customModuleProvider="target">
+                                <rect key="frame" x="0.5" y="124" width="413" height="114"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Cdj-oM-bBm">
+                                    <rect key="frame" x="0.0" y="0.0" width="413" height="114"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZb-pz-Nc4">
+                                            <rect key="frame" x="8" y="8" width="74.5" height="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceP-Oo-JxK">
+                                            <rect key="frame" x="32" y="24" width="373" height="82"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rZb-pz-Nc4" firstAttribute="leading" secondItem="Cdj-oM-bBm" secondAttribute="leading" constant="8" id="5Ce-39-tR7"/>
+                                        <constraint firstItem="rZb-pz-Nc4" firstAttribute="top" secondItem="Cdj-oM-bBm" secondAttribute="top" constant="8" id="7Lc-8N-1Mb"/>
+                                        <constraint firstItem="ceP-Oo-JxK" firstAttribute="leading" secondItem="rZb-pz-Nc4" secondAttribute="leading" constant="24" id="D7x-K9-Z7a"/>
+                                        <constraint firstAttribute="bottom" secondItem="ceP-Oo-JxK" secondAttribute="bottom" constant="8" id="ImT-A5-frf"/>
+                                        <constraint firstAttribute="trailing" secondItem="ceP-Oo-JxK" secondAttribute="trailing" constant="8" id="UPu-Oc-gEg"/>
+                                        <constraint firstItem="ceP-Oo-JxK" firstAttribute="top" secondItem="rZb-pz-Nc4" secondAttribute="top" constant="16" id="sgZ-Ou-gfz"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="413" height="114"/>
+                                <connections>
+                                    <outlet property="primaryTextLabel" destination="rZb-pz-Nc4" id="D4v-Fq-02o"/>
+                                    <outlet property="secondaryTextLabel" destination="ceP-Oo-JxK" id="RQZ-YU-NIm"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -59,7 +128,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Pz-SC-Lio" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1358" y="78"/>
+            <point key="canvasLocation" x="-1359.4202898550725" y="77.678571428571431"/>
         </scene>
         <!--Habits-->
         <scene sceneID="JJf-UG-5xE">
