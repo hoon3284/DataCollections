@@ -56,11 +56,24 @@ class LogHabitCollectionViewController: HabitCollectionViewController {
         }
     }
     
+    override func configureCell(_ cell: PrimarySecondaryTextCollectionViewCell, withItem item: HabitCollectionViewController.ViewModel.Item) {
+        cell.primaryTextLabel.text = item.name
+        cell.layer.cornerRadius = 8
+        
+        if Settings.shared.favoriteHabits.contains(item) {
+            cell.backgroundColor = favoriteHabitColor
+        } else {
+            cell.backgroundColor = .systemGray6
+        }
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         
         let loggedHabit = LoggedHabit(userID: Settings.shared.currentUser.id, habitName: item.name, timestamp: Date())
         
-        LogHabitRequest(trackedEvent: loggedHabit).send { _ in print("select")}
+        LogHabitRequest(trackedEvent: loggedHabit).send { _ in }
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
 }

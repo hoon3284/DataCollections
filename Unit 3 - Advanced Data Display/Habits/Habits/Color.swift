@@ -5,7 +5,7 @@
 //  Created by wickedRun on 2021/10/19.
 //
 
-import Foundation
+import UIKit
 
 struct Color {
     let hue: Double
@@ -20,3 +20,11 @@ extension Color: Codable {
         case brightness = "b"
     }
 }
+
+extension Color {
+    var uiColor: UIColor {
+        return UIColor(hue: CGFloat(hue), saturation: CGFloat(saturation), brightness: CGFloat(brightness), alpha: 1)
+    }
+}
+
+extension Color: Hashable { }

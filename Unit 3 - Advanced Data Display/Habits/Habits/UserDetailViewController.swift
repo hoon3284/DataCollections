@@ -34,6 +34,15 @@ class UserDetailViewController: UIViewController {
                     return category1.name > category2.name
                 }
             }
+            
+            var sectionColor: UIColor {
+                switch self {
+                case .leading:
+                    return .systemGray4
+                case .category(let category):
+                    return category.color.uiColor
+                }
+            }
         }
         
         typealias Item = HabitCount
@@ -72,7 +81,7 @@ class UserDetailViewController: UIViewController {
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = createLayout()
         
-        update()
+        view.backgroundColor = user.color?.uiColor ?? .white
         
         // 프로필 이미지는 드물게 바뀔 것이므로 ImageRequest는 한번만 보내도 되므로 ViewDidLoad에서 해준다.
         ImageRequest(imageID: user.id).send { result in
@@ -84,6 +93,8 @@ class UserDetailViewController: UIViewController {
             default: break
             }
         }
+        
+        update()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -176,6 +187,8 @@ class UserDetailViewController: UIViewController {
             case .category(let category):
                 header.nameLabel.text = category.name
             }
+            
+            header.backgroundColor = section.sectionColor
             
             return header
         }

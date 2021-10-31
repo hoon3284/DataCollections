@@ -35,6 +35,7 @@
 		B5C0CB92271CB56700218A39 /* HabitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0CB91271CB56700218A39 /* HabitDetailViewController.swift */; };
 		B5C0CB94271CB57100218A39 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0CB93271CB57100218A39 /* UserDetailViewController.swift */; };
 		B5CCE63E2728270300ACD9C3 /* LoggedHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CCE63D2728270300ACD9C3 /* LoggedHabit.swift */; };
+		B5F996E3272F2C9F00C2190F /* FollowedUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F996E2272F2C9F00C2190F /* FollowedUserCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		B5C0CB91271CB56700218A39 /* HabitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewController.swift; sourceTree = "<group>"; };
 		B5C0CB93271CB57100218A39 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		B5CCE63D2728270300ACD9C3 /* LoggedHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedHabit.swift; sourceTree = SOURCE_ROOT; };
+		B5F996E2272F2C9F00C2190F /* FollowedUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedUserCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				28EFEA36271EC7A900CD4C33 /* PrimarySecondaryTextCollectionViewCell.swift */,
 				B58A8B212729EA8600F8687A /* LeaderboardHabitCollectionViewCell.swift */,
 				B5C0CB89271C930B00218A39 /* HomeCollectionViewController.swift */,
+				B5F996E2272F2C9F00C2190F /* FollowedUserCollectionViewCell.swift */,
 				B58A8B232729F5F800F8687A /* CombinedStatistics.swift */,
 				B5C0CB8D271C932300218A39 /* HabitCollectionViewController.swift */,
 				28EFEA2C271EAF2800CD4C33 /* Habit.swift */,
@@ -229,6 +232,7 @@
 				B5C0CB8E271C932300218A39 /* HabitCollectionViewController.swift in Sources */,
 				28EFEA2F271EAF2E00CD4C33 /* Category.swift in Sources */,
 				B58A8B222729EA8600F8687A /* LeaderboardHabitCollectionViewCell.swift in Sources */,
+				B5F996E3272F2C9F00C2190F /* FollowedUserCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
