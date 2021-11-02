@@ -25,18 +25,21 @@ class HapticsMorseCodePlayer: MorseCodePlayer {
     }
 
     func hapticEvents(for message: MorseCodeMessage) -> [CHHapticEvent] {
-        var events: [CHHapticEvent] = []
-        var startTime: TimeInterval = 0.4
-        message.playbackEvents.forEach { playbackEvent in
-            switch playbackEvent {
-            case .on(let duration):
-                events.append(CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: startTime, duration: duration))
-                startTime += duration
-            case .off(let duration):
-                startTime += duration
+        var startTime: TimeInterval = 0
+        let hapticEvents: [CHHapticEvent] = message.playbackEvents.compactMap { event -> CHHapticEvent? in
+            let hapticEvent: CHHapticEvent?
+            switch event {
+            case .off:
+                hapticEvent = nil
+            case .on:
+                hapticEvent = CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: startTime, duration: event.duration)
             }
+            
+            startTime += event.duration
+            return hapticEvent
         }
-        return events
+        
+        return hapticEvents
     }
     
 }
